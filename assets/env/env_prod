@@ -1,0 +1,10 @@
+BASE_URL=https://baseplay-staging.Base.net
+BASE_URL_API=https://api.baseplay-staging.Base.net
+GO_SHOP_BASE_URL=https://baseshop-staging.Base.net/wp-json/wc/v3
+GO_SHOP_BASE_URL_V1=https://baseshop-staging.Base.net/wc-api/v3
+GO_SHOP_CK=ck_7f92b740b2e04887bc3e39211ca28e5f5720337f
+GO_SHOP_CS=cs_62e9709ea809fb0c5699cba887ffa10f34d01a9d
+FLAG=https://baseplay-staging.s3.ap-southeast-1.amazonaws.com/flag/
+HOST_GAME=https://staging.hostpixelmechanics.com/Base/product-category/newgames/
+HOST_URL=https://baseplay-staging.Base.net/
+API_LOG=false

@@ -1,2 +1,6 @@
-# tiktok_clone
-Create tiktok clone for fun 
+
+A new Flutter project.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.

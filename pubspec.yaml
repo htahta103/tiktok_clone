@@ -1,0 +1,114 @@
+name: base_project
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+
+
+  cupertino_icons: ^1.0.2
+  sqflite:
+  path:
+  rect_getter: ^1.1.0
+  rxdart: ^0.27.3
+  logger: ^1.1.0
+  http: ^0.13.5
+  dio: ^4.0.6
+  json_annotation: ^4.7.0
+  retrofit: ^3.3.1
+  equatable: ^2.0.5
+  collection: ^1.16.0
+  get_it: ^7.2.0
+  integration_test:
+    sdk: flutter
+  provider: ^6.0.5
+  universal_platform: ^1.0.0+1
+  intl_utils: ^2.7.0
+  flutter_dotenv: ^5.0.2
+
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  test: ^1.21.4
+  mockito: ^5.3.2
+  build_runner:
+  flutter_gen_runner:
+  flutter_lints: ^2.0.1
+  retrofit_generator: ^4.2.0
+  json_serializable:
+
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/env/
+flutter_intl:
+  enabled: true # Required. Must be set to true to activate the package. Default: false
+  class_name: S # Optional. Sets the name for the generated localization class. Default: S
+  main_locale: en # Optional. Sets the main locale used for generating localization files. Provided value should consist of language code and optional script and country codes separated with underscore (e.g. 'en', 'en_GB', 'zh_Hans', 'zh_Hans_CN'). Default: en
+  arb_dir: lib/common/localization/l10n # Optional. Sets the directory of your ARB resource files. Provided value should be a valid path on your system. Default: lib/l10n
+  output_dir: lib/common/localization/generated # Optional. Sets the directory of generated localization files. Provided value should be a valid path on your system. Default: lib/generated
+  use_deferred_loading: false # Optional. Must be set to true to generate localization code that is loaded with deferred loading. Default: false
+  localizely: # Optional settings if you use Localizely platform. Read more: https://localizely.com/flutter-localization-workflow
+    project_id: # Get it from the https://app.localizely.com/projects page.
+    branch: # Get it from the “Branches” page on the Localizely platform, in case branching is enabled and you want to use a non-main branch.
+    upload_overwrite: # Set to true if you want to overwrite translations with upload. Default: false
+    upload_as_reviewed: # Set to true if you want to mark uploaded translations as reviewed. Default: false
+    upload_tag_added: # Optional list of tags to add to new translations with upload (e.g. ['new', 'New translation']). Default: []
+    upload_tag_updated: # Optional list of tags to add to updated translations with upload (e.g. ['updated', 'Updated translation']). Default: []
+    upload_tag_removed: # Optional list of tags to add to removed translations with upload (e.g. ['removed', 'Removed translation']). Default: []
+    download_empty_as: # Set to empty|main|skip, to configure how empty translations should be exported from the Localizely platform. Default: empty
+    download_include_tags: # Optional list of tags to be downloaded (e.g. ['include', 'Include key']). If not set, all string keys will be considered for download. Default: []
+    download_exclude_tags: # Optional list of tags to be excluded from download (e.g. ['exclude', 'Exclude key']). If not set, all string keys will be considered for download. Default: []
+    ota_enabled: # Set to true if you want to use Localizely Over-the-air functionality. Default: false
+# ========= END =========
+
+# === BEGIN: gen assets config ===
+flutter_gen:
+  output: lib/common/values/ # Optional (default: lib/gen/)
+  line_length: 80 # Optional (default: 80)
+
+  # Optional
+  integrations:
+    flutter_svg: true
+    flare_flutter: true
+    rive: true
+
+  assets:
+    # Optional
+    enabled: true
+    outputs:
+      # Optional
+      # Set to true if you want this package to be a package dependency
+      # See: https://flutter.dev/docs/development/ui/assets-and-images#from-packages
+      package_parameter_enabled: false
+      # Optional
+      # Avaliable values:
+      # - camel-case
+      # - snake-case
+      # - dot-delimiter
+      style: camel-case
+
+  fonts:
+    # Optional
+    enabled: true
+
+  colors:
+    # Optional
+    enabled: false
+    inputs:
+      - assets/color/colors.xml
+# ========= END =========
