@@ -7,7 +7,6 @@ class RemoteModule extends DIModule {
 
   @override
   Future<void> provides() async {
-    getIt.registerLazySingleton<DogRemote>(
-        () => DogRemote(dio, baseUrl: BASE_URL.URL));
+    getIt.registerSingleton(VideoRemote());
   }
 }

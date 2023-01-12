@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:base_project/common_widget/values/values.dart';
-import 'package:base_project/main_utils/application.dart';
+import 'package:tiktok_clone/common_widget/values/values.dart';
+import 'package:tiktok_clone/main_utils/application.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:base_project/common/utils/utils.dart';
-import 'package:base_project/common_widget/log/log_util.dart';
-import 'package:base_project/di/di.dart';
+import 'package:tiktok_clone/common/utils/utils.dart';
+import 'package:tiktok_clone/common_widget/log/log_util.dart';
+import 'package:tiktok_clone/di/di.dart';
 
 import 'main_utils/build_config.dart';
 import 'main_utils/env_setup.dart';

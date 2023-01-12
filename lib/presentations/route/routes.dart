@@ -1,17 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tiktok_clone/presentations/modules/feed_screen/feed_screen.dart';
 
 import '../../common/app_general/constants.dart';
 import '../modules/splash_screen/splash_screen.dart';
 
 class Routes {
   static const String splashScreen = '/';
+  static const String feedScreen = '/feed_screen';
 
   static Route<dynamic> getRouteGenerate(RouteSettings settings) {
     var args = (settings.arguments ?? {}) as Map<dynamic, dynamic>;
     switch (settings.name) {
       case Routes.splashScreen:
         return _buildRouteFade(settings, const SplashScreen());
+      case Routes.feedScreen:
+        return _buildRouteFade(settings, FeedScreen.instance());
 
       default:
         return _errorRoute();

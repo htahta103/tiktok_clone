@@ -1,0 +1,40 @@
+{
+    "project_info": {
+        "project_number": "800995131542",
+        "project_id": "tiktok-clone-ef77d",
+        "storage_bucket": "tiktok-clone-ef77d.appspot.com"
+    },
+    "client": [{
+        "client_info": {
+            "mobilesdk_app_id": "1:800995131542:android:1febbe0f0680dcf8fe82b7",
+            "android_client_info": {
+                "package_name": "com.example.tiktok_clone"
+            }
+        },
+        "oauth_client": [{
+                "client_id": "800995131542-mnnjenabllep88dd39pb57q5gab42usv.apps.googleusercontent.com",
+                "client_type": 1,
+                "android_info": {
+                    "package_name": "com.example.tiktok_clone",
+                    "certificate_hash": "03638ed979ba6c41c1b892a516f2038c29a068ea"
+                }
+            },
+            {
+                "client_id": "800995131542-ejisgsq9s358q0kj2ga51ubrvjl2tr4h.apps.googleusercontent.com",
+                "client_type": 3
+            }
+        ],
+        "api_key": [{
+            "current_key": "AIzaSyABwyQER7RLaPpPz6bwDxSjeUyVqyGsAzQ"
+        }],
+        "services": {
+            "appinvite_service": {
+                "other_platform_oauth_client": [{
+                    "client_id": "800995131542-ejisgsq9s358q0kj2ga51ubrvjl2tr4h.apps.googleusercontent.com",
+                    "client_type": 3
+                }]
+            }
+        }
+    }],
+    "configuration_version": "1"
+}

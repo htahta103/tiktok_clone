@@ -72,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tên người dùng phải từ 6 đến 32 ký tự"),
         "backToSignIn":
             MessageLookupByLibrary.simpleMessage("Trở lại Đăng nhập"),
+        "baseshop": MessageLookupByLibrary.simpleMessage("baseshop"),
         "board": MessageLookupByLibrary.simpleMessage("Bàn"),
         "bothGet": MessageLookupByLibrary.simpleMessage("Cả hai đều nhận được"),
         "cancelRequest": MessageLookupByLibrary.simpleMessage("Hủy yêu cầu"),
@@ -235,7 +236,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "gems": MessageLookupByLibrary.simpleMessage("Đá quý"),
         "getBack": MessageLookupByLibrary.simpleMessage("Quay lại"),
         "go": MessageLookupByLibrary.simpleMessage("Đi đến >>"),
-        "baseshop": MessageLookupByLibrary.simpleMessage("baseshop"),
         "goToResetPassword":
             MessageLookupByLibrary.simpleMessage("Đặt lại mật khẩu"),
         "goToVerification":
