@@ -1,16 +1,20 @@
 part of utils;
 
-extension VideoExtension on VideoPlayerController {
+extension VideoExtension on VideoPlayerController? {
   Future setPlay() async {
-    if (!value.isPlaying) await play();
+    if (this?.value == null) return;
+    if (!this!.value.isPlaying) await this!.play();
   }
 
   Future setStop() async {
-    if (value.isPlaying) await pause();
+    if (this?.value == null) return;
+    if (this!.value.isPlaying) await this!.pause();
   }
 
   Future reset() async {
-    if (value.isPlaying) await pause();
-    await seekTo(Duration.zero);
+    if (this?.value == null) return;
+
+    if (this!.value.isPlaying) await this!.pause();
+    await this!.seekTo(Duration.zero);
   }
 }

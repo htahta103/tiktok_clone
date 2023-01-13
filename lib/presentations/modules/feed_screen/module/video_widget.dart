@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok_clone/common/utils/utils.dart';
 import 'package:tiktok_clone/presentations/modules/feed_screen/feed_item_ui_model.dart';
 import 'package:video_player/video_player.dart';
 
@@ -15,17 +16,23 @@ class _VideoWidgetState extends State<VideoWidget> {
   @override
   void initState() {
     super.initState();
+    loadData();
+  }
+
+  void loadData() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      await widget.feedItem.loadingController();
+      try {
+        await widget.feedItem.loadingController();
+        if (widget.index == 0) widget.feedItem.controller?.setPlay();
+      } catch (e) {
+        print(' === init Failedddddd  \n ${widget.index}');
+      }
     });
   }
 
   @override
   void didUpdateWidget(covariant VideoWidget oldWidget) {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      await oldWidget.feedItem.dispose();
-      await widget.feedItem.loadingController();
-    });
+    loadData();
 
     super.didUpdateWidget(oldWidget);
   }
@@ -36,7 +43,19 @@ class _VideoWidgetState extends State<VideoWidget> {
         stream: widget.feedItem.isLoadedStream,
         builder: (context, snap) {
           if (snap.data ?? false) {
-            return VideoPlayer(widget.feedItem.controller!);
+            return Stack(
+              children: [
+                VideoPlayer(widget.feedItem.controller!),
+                Center(
+                    child: Text(
+                  widget.index.toString(),
+                  style: const TextStyle(
+                      backgroundColor: Colors.white,
+                      color: Colors.black,
+                      fontSize: 40),
+                )),
+              ],
+            );
           } else {
             return const Center(child: Text('waiting'));
           }
@@ -45,7 +64,6 @@ class _VideoWidgetState extends State<VideoWidget> {
 
   @override
   void dispose() {
-    print(' ==== dispose + index  : ${widget.index} ');
     widget.feedItem.dispose();
     super.dispose();
   }
