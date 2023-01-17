@@ -1,4 +1,4 @@
-import 'package:base_project/common_widget/log/log_util.dart';
+import 'package:tiktok_clone/common_widget/log/log_util.dart';
 import 'package:flutter/material.dart';
 
 class MyRouteObserver extends RouteObserver<PageRoute<dynamic>> {

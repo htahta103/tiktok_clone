@@ -3,7 +3,9 @@ part of utils;
 extension SizeExtension on num {
   double get w => ScreenUtil().setWidth(this).toDouble();
 
-  double get h => ScreenUtil().setHeight(this).toDouble();
+  double get h {
+    return ScreenUtil().setHeight(this).toDouble();
+  }
 
   double get sp => ScreenUtil().setSp(this).toDouble();
 }
@@ -20,8 +22,8 @@ class MediaQueryAppModel {
 
 class ScreenUtil {
   static ScreenUtil _instance = ScreenUtil._();
-  static const double defaultWidth = 1080;
-  static const double defaultHeight = 1920;
+  static const double defaultWidth = 414;
+  static const double defaultHeight = 896;
 
   /// Size of the phone in UI Design , px
   num? uiWidthPx;

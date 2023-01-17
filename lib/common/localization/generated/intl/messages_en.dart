@@ -107,10 +107,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "Username must be between 6 and 32 characters"),
         "avatarFrames": MessageLookupByLibrary.simpleMessage("Avatar Frames"),
         "averageRating": MessageLookupByLibrary.simpleMessage("Average rating"),
+        "backToSignIn": MessageLookupByLibrary.simpleMessage("Back to Sign In"),
         "backTobaseshop":
             MessageLookupByLibrary.simpleMessage("Back to Go Shop"),
-        "backToSignIn": MessageLookupByLibrary.simpleMessage("Back to Sign In"),
         "balance": MessageLookupByLibrary.simpleMessage("Balance"),
+        "baseshop": MessageLookupByLibrary.simpleMessage("baseshop"),
         "billingDetails":
             MessageLookupByLibrary.simpleMessage("Billing Details"),
         "block": m0,
@@ -448,7 +449,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "go": MessageLookupByLibrary.simpleMessage("go >>"),
         "goPayProprietaryPaymentAggregator": MessageLookupByLibrary.simpleMessage(
             "goPay is a proprietary payment aggregator by Base that specializes in emerging markets."),
-        "baseshop": MessageLookupByLibrary.simpleMessage("baseshop"),
         "goToResetPassword":
             MessageLookupByLibrary.simpleMessage("Go to reset password"),
         "goToVerification":
@@ -946,8 +946,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Your code will expire in"),
         "yourCurrentRankIs":
             MessageLookupByLibrary.simpleMessage("Your current rank is"),
-        "yourbaseshopOrderBeenReceived":
-            MessageLookupByLibrary.simpleMessage("Thank you for buying!"),
         "yourInviterLeft":
             MessageLookupByLibrary.simpleMessage("Your Inviter left"),
         "yourOrder": MessageLookupByLibrary.simpleMessage("Your Order"),
@@ -968,6 +966,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Your Score Has Been Submitted!"),
         "yourScoreIsNotHighEnough": MessageLookupByLibrary.simpleMessage(
             "Good Try, but your Score isn\'t high enough!"),
+        "yourbaseshopOrderBeenReceived":
+            MessageLookupByLibrary.simpleMessage("Thank you for buying!"),
         "zipPostcode": MessageLookupByLibrary.simpleMessage("Zip/Postcode")
       };
 }

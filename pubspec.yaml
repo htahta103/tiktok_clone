@@ -1,5 +1,5 @@
-name: base_project
-description: A new Flutter project.
+name: tiktok_clone
+description: A tiktok clone project for fun.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.
 version: 1.0.0+1
@@ -33,7 +33,10 @@ dependencies:
   universal_platform: ^1.0.0+1
   intl_utils: ^2.7.0
   flutter_dotenv: ^5.0.2
-
+  uuid: ^3.0.7
+  video_player: ^2.4.10
+  preload_page_view: ^0.1.6
+  cached_network_image: ^3.2.3
   
 dev_dependencies:
   flutter_test:
@@ -55,6 +58,7 @@ flutter:
   assets:
     - assets/
     - assets/env/
+    - assets/icons/
 flutter_intl:
   enabled: true # Required. Must be set to true to activate the package. Default: false
   class_name: S # Optional. Sets the name for the generated localization class. Default: S

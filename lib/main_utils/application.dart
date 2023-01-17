@@ -1,6 +1,6 @@
-import 'package:base_project/di/di.dart';
-import 'package:base_project/global_blocs/app_loading.dart';
-import 'package:base_project/global_blocs/app_setting_bloc.dart';
+import 'package:tiktok_clone/di/di.dart';
+import 'package:tiktok_clone/global_blocs/app_loading.dart';
+import 'package:tiktok_clone/global_blocs/app_setting_bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -64,7 +64,7 @@ class Application extends StatelessWidget {
       ],
       theme: AppThemes.getTheme(state.themeMode),
       onGenerateRoute: Routes.getRouteGenerate,
-      initialRoute: Routes.splashScreen,
+      initialRoute: Routes.feedScreen,
     );
   }
 }

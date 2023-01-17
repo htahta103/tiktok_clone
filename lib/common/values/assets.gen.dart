@@ -18,8 +18,21 @@ class Assets {
   /// File path: assets/env/env_prod
   static const String envEnvProd = 'assets/env/env_prod';
 
+  /// File path: assets/icons/comment.png
+  static const AssetGenImage iconsComment =
+      AssetGenImage('assets/icons/comment.png');
+
+  /// File path: assets/icons/music_default.png
+  static const AssetGenImage iconsMusicDefault =
+      AssetGenImage('assets/icons/music_default.png');
+
+  /// File path: assets/icons/share.png
+  static const AssetGenImage iconsShare =
+      AssetGenImage('assets/icons/share.png');
+
   /// List of all assets
-  List<String> get values => [envEnvDev, envEnvProd];
+  List<dynamic> get values =>
+      [envEnvDev, envEnvProd, iconsComment, iconsMusicDefault, iconsShare];
 }
 
 class AssetGenImage {

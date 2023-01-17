@@ -5,9 +5,9 @@ class RepoModule extends DIModule {
   Future<void> provides() async {
     // ignore: avoid_single_cascade_in_expression_statements
     getIt
-      ..registerLazySingleton<DogRepo>(
-        () => DogRepoImp(
-          dogRemote: getIt<DogRemote>(),
+      ..registerLazySingleton<VideoRepo>(
+        () => VideoRepoImpl(
+          getIt<VideoRemote>(),
         ),
       );
   }

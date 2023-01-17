@@ -3,40 +3,12 @@ part of 'values.dart';
 class AppDimens {
   AppDimens._();
 
-  // Text, icon size.
-  static const double kTextSizeHeading1 = 110.0;
-  static const double kTextSizeHeading2 = 88.0;
-  static const double kTextSizeHeading3 = 70.0;
-  static const double kTextSizeHeading4 = 56.0;
+  //Button
 
-  static const double kTextSizeSubHeading2 = 56.0;
-  static const double kTextSizeSubHeading3 = 45.0;
-  static const double kTextSizeSubHeading4 = 36.0;
-
-  static const double kTextSizeBody = 36.0;
-
-  static const double kTextSizeExtra = 23.0;
-  static const double kTextSizeCaption = 29.0;
-  static const double kTextSizeOverline = 29.0;
-  static const double kTextSizeTitle = 45;
-
-  static const double kTextSizeButton = 36.0;
-
-  static const double kTextSizeLinkSmall = 29.0;
-  static const double kTextSizeLinkBig = 36.0;
-
-  static const double kIconSize = 24;
-  static const double kButtonIconSize = 60;
-  static const double kIconInputSize = 48;
-  static const double kSelectorSize = 42;
-  static const double kTrailingFeedCardSize = 185;
-
-  static const double kProfileImageLargeSize = 170;
-  static const double kProfileImageMediumSize = 100;
-  static const double kProfileImageSmallSize = 50;
+  static const double buttonSize = 35;
+  static const double circleButtonSize = 45;
 
   static const double kSpaceVertical = 30;
-  static const double kSpaceVerticalSection = 40;
   static const double kSpaceHorizontal = 30;
 
   // width height, radius
