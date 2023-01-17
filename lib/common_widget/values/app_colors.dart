@@ -5,6 +5,9 @@ class AppColors {
 
   // Base colors
   static const Color white = Colors.white;
+  static const Color white60 = Colors.white60;
+  static const Color white30 = Colors.white30;
+  static const Color transparent = Colors.transparent;
   static Color shimmerBase = Colors.grey.shade50;
   static Color shimmerHighLighted = Colors.grey.shade200;
 
@@ -13,19 +16,11 @@ class AppColors {
 
   static const Color secondary = Color(0xFF00619E);
 
-  static const Color nativeButtonBG = Color(0xFF005C8A);
-  static const Color backgroundReceipt = Color(0x1AB9C0CD);
-  static const Color inputFieldBG = Color(0x055E6775);
-  static const Color lowEmText = Color(0xFFC2CCDA);
-  static const Color borderGreyLight = Color(0xFFC2CCDA);
-  static const Color boxShadow = Color(0x40000000);
-  static const Color redButton = Color(0xFFD81A1A);
-
   static const Color negative = Color(0xFFF10A41);
   static const Color positive = Color(0xFF159558);
   static const Color critical = Color(0xFFF8BA1A);
   static const Color specialBtnBG = Color(0xFFF5A732);
-  static const Color redNote = Color(0xFFE05534);
+  static const Color red = Colors.red;
 
   static const Color coin = Color(0xFFFF6002);
   static const Color gem = Color(0xFF17ACFF);
@@ -114,25 +109,21 @@ class AppColors {
       buttonBG = _buttonBGDark;
       tabsBG = _tabsBGDark;
       borderDGrey = _borderDGreyDark;
-      iconColor = _iconColorDark;
       dividers = _dividersDark;
       buttonText = _buttonTextDark;
       cardBG = _cardBGDark;
       hiEmText = _hiEmTextDark;
       medEmText = _medEmTextDark;
-      transparentGradientOverlay = _transparentGradientOverlayDark;
     } else {
       mainBG = _mainBGLight;
       buttonBG = _buttonBGLight;
       tabsBG = _tabsBGLight;
       borderDGrey = _borderDGreyLight;
-      iconColor = _iconColorLight;
       dividers = _dividersLight;
       buttonText = _buttonTextLight;
       cardBG = _cardBGLight;
       hiEmText = _hiEmTextLight;
       medEmText = _medEmTextLight;
-      transparentGradientOverlay = _transparentGradientOverlayLight;
     }
   }
 
@@ -151,10 +142,6 @@ class AppColors {
   static const Color _borderDGreyLight = Color(0xFF5E6775);
   static const Color _borderDGreyDark = Color(0xFFF4F4F4);
   static Color borderDGrey = _borderDGreyLight;
-
-  static const Color _iconColorLight = Color(0xFF272727);
-  static const Color _iconColorDark = Color(0xFFFBFBFB);
-  static Color iconColor = _iconColorLight;
 
   static const Color _dividersLight = Color(0xFFF4F4F4);
   static const Color _dividersDark = Color(0xFF363D48);
@@ -177,20 +164,25 @@ class AppColors {
   static const Color _medEmTextDark = Color(0xFFC2CCDA);
   static Color medEmText = _medEmTextLight;
 
-  static final LinearGradient _transparentGradientOverlayLight = LinearGradient(
-      begin: Alignment.center,
-      end: Alignment.topCenter,
+  static final LinearGradient cdGradient = LinearGradient(
+      begin: Alignment.topRight,
+      end: Alignment.bottomLeft,
+      stops: [
+        0.1257,
+        0.3838,
+        0.6278,
+        0.8803,
+      ],
       colors: [
-        const Color(0xFFFFFFFF).withOpacity(1),
-        const Color(0xFFFFFFFF).withOpacity(0)
+        const Color(0xFF171717).withOpacity(1),
+        const Color(0xFF373736).withOpacity(1),
+        const Color(0xFF171717).withOpacity(1),
+        const Color(0xFF373736).withOpacity(1)
       ]);
-  static final LinearGradient _transparentGradientOverlayDark = LinearGradient(
-      begin: Alignment.center,
-      end: Alignment.topCenter,
-      colors: [
-        const Color(0xFF000000).withOpacity(1),
-        const Color(0xFF000000).withOpacity(0)
-      ]);
-  static LinearGradient transparentGradientOverlay =
-      _transparentGradientOverlayLight;
+
+  static final LinearGradient contentGradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [Colors.transparent, Colors.black.withOpacity(0.7)],
+  );
 }

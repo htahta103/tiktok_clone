@@ -1,9 +1,12 @@
 import 'package:rxdart/subjects.dart';
+import 'package:tiktok_clone/common/utils/utils_detail/string_utils.dart';
 import 'package:tiktok_clone/data/models/video_demo_model/video_api.dart';
 import 'package:video_player/video_player.dart';
 
 class FeedItemUIModel {
   final VideoDemoAPI data;
+  final List<HashtagContent> content;
+  final bool isOverflow;
   VideoPlayerController? controller;
   bool? isDispose;
   bool isLoading = false;
@@ -11,7 +14,8 @@ class FeedItemUIModel {
   final BehaviorSubject<bool> _isLoadedCtrl = BehaviorSubject();
   Stream<bool> get isLoadedStream => _isLoadedCtrl.stream;
 
-  FeedItemUIModel(this.data);
+  FeedItemUIModel(
+      {required this.data, required this.content, required this.isOverflow});
 
   Future<void> loadingController() async {
     try {
@@ -29,7 +33,6 @@ class FeedItemUIModel {
         isLoading = false;
       }
       isSuccessLoaded = true;
-      print(' === init scuess ${data.video_title}');
     } catch (e) {
       isLoading = false;
 

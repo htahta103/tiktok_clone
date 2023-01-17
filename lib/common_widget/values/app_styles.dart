@@ -59,11 +59,11 @@ class AppStyles {
         colorFilter: filter);
   }
 
-  static BoxShadow buildShadow() => const BoxShadow(
-        color: AppColors.boxShadow,
-        offset: Offset(0, 4),
-        blurRadius: 4,
-      );
+//   static BoxShadow buildShadow() => const BoxShadow(
+//         color: AppColors.boxShadow,
+//         offset: Offset(0, 4),
+//         blurRadius: 4,
+//       );
 }
 
 mixin OutlineInputBorderMixin {

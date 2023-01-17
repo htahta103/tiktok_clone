@@ -17,4 +17,12 @@ extension VideoExtension on VideoPlayerController? {
     if (this!.value.isPlaying) await this!.pause();
     await this!.seekTo(Duration.zero);
   }
+
+  Future onTapVideo() async {
+    if (!this!.value.isPlaying) {
+      await this!.play();
+    } else {
+      await this!.pause();
+    }
+  }
 }
