@@ -172,7 +172,7 @@ class _VideoContentWidgetState extends State<VideoContentWidget>
   void dispose() {
     widget.data.controller?.removeListener(func);
     cdSpinController.dispose();
-    likeBtnCtrl.dispose(); // TODO: implement dispose
+    likeBtnCtrl.dispose();
     super.dispose();
   }
 }
