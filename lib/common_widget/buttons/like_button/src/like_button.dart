@@ -40,7 +40,7 @@ class LikeButton extends StatefulWidget {
     this.iconColor,
     this.iconColorLiked,
     this.countColor,
-    this.controller,
+    this.setLikeStream,
   })  : bubblesSize = bubblesSize ?? size * 2.0,
         circleSize = circleSize ?? size * 0.8,
         super(key: key);
@@ -107,13 +107,15 @@ class LikeButton extends StatefulWidget {
   /// top of like widget
   /// bottom of like widget
   final CountPostion countPostion;
-  final AnimationController? controller;
 
   /// padding of like button
   final EdgeInsetsGeometry? padding;
 
   /// return count widget with decoration
   final CountDecoration? countDecoration;
+
+  /// Stream Listen to call like function outside widget
+  final Stream<bool>? setLikeStream;
 
   /// call back of first frame with LikeButtonState
   final Function(LikeButtonState state)? postFrameCallback;
@@ -151,11 +153,10 @@ class LikeButtonState extends State<LikeButton> with TickerProviderStateMixin {
     _likeCount = widget.likeCount;
     _preLikeCount = _likeCount;
     //TODO
-    controller = widget.controller ??
+    controller =
         AnimationController(duration: widget.animationDuration, vsync: this);
     _likeCountController = AnimationController(
         duration: widget.likeCountAnimationDuration, vsync: this);
-
     _initAnimations();
 
     if (widget.postFrameCallback != null) {
@@ -165,6 +166,9 @@ class LikeButtonState extends State<LikeButton> with TickerProviderStateMixin {
         widget.postFrameCallback!.call(this);
       });
     }
+    widget.setLikeStream?.listen((event) {
+      _handleIsLikeChanged(event);
+    });
   }
 
   @override
@@ -447,6 +451,7 @@ class LikeButtonState extends State<LikeButton> with TickerProviderStateMixin {
       }
       if (mounted) {
         setState(() {
+          //TODO
           controller!.reset();
           controller!.forward();
 

@@ -10,41 +10,19 @@ import '../../../../../common_widget/common_widget.dart';
 
 class VideoContentWidget extends StatefulWidget {
   final FeedItemUIModel data;
-  const VideoContentWidget({super.key, required this.data});
+  final AnimationController cdSpinController;
+  final Stream<bool> likeController;
+  const VideoContentWidget(
+      {super.key,
+      required this.data,
+      required this.cdSpinController,
+      required this.likeController});
 
   @override
   State<VideoContentWidget> createState() => _VideoContentWidgetState();
 }
 
-class _VideoContentWidgetState extends State<VideoContentWidget>
-    with SingleTickerProviderStateMixin {
-  late AnimationController cdSpinController;
-  late AnimationController likeBtnCtrl;
-
-  late Function() func;
-  @override
-  void initState() {
-    super.initState();
-    cdSpinController = AnimationController(
-      duration: const Duration(seconds: 10),
-      vsync: this,
-    )..repeat(reverse: false);
-    func = () {
-      if (widget.data.isPlaying) {
-        if (!cdSpinController.isAnimating) {
-          cdSpinController.repeat(reverse: false);
-        }
-      } else {
-        if (cdSpinController.isAnimating) {
-          cdSpinController.stop();
-        }
-      }
-    };
-    widget.data.controller?.addListener(func);
-    likeBtnCtrl = AnimationController(
-        duration: const Duration(milliseconds: 500), vsync: this);
-  }
-
+class _VideoContentWidgetState extends State<VideoContentWidget> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -72,6 +50,7 @@ class _VideoContentWidgetState extends State<VideoContentWidget>
           size: AppDimens.circleButtonSize.h,
         ),
         LikeButton(
+          setLikeStream: widget.likeController,
           padding: EdgeInsets.symmetric(vertical: 10.h),
           size: AppDimens.buttonSize.h,
           countPostion: CountPostion.bottom,
@@ -123,7 +102,7 @@ class _VideoContentWidgetState extends State<VideoContentWidget>
         ),
         saveButton(),
         CircleMusicWidget(
-          controller: cdSpinController,
+          controller: widget.cdSpinController,
         ),
         SizedBox(
           height: 15.h,
@@ -166,13 +145,5 @@ class _VideoContentWidgetState extends State<VideoContentWidget>
         );
       },
     );
-  }
-
-  @override
-  void dispose() {
-    widget.data.controller?.removeListener(func);
-    cdSpinController.dispose();
-    likeBtnCtrl.dispose();
-    super.dispose();
   }
 }

@@ -21,6 +21,7 @@ class AppColors {
   static const Color critical = Color(0xFFF8BA1A);
   static const Color specialBtnBG = Color(0xFFF5A732);
   static const Color red = Colors.red;
+  static Color red70 = Colors.red.withOpacity(0.7);
 
   static const Color coin = Color(0xFFFF6002);
   static const Color gem = Color(0xFF17ACFF);

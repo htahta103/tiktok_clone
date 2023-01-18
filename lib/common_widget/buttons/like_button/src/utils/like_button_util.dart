@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:tiktok_clone/common_widget/values/values.dart';
 
 ///
 ///  create by zmtzawqlp on 2019/5/27
@@ -22,9 +23,8 @@ Widget defaultWidgetBuilder(
     bool isLiked, double size, Color? iconColor, Color? iconColorLiked) {
   return Icon(
     Icons.favorite,
-    color: isLiked
-        ? iconColorLiked ?? Colors.pinkAccent
-        : iconColor ?? Colors.white,
+    color:
+        isLiked ? iconColorLiked ?? AppColors.red : iconColor ?? Colors.white,
     size: size,
   );
 }
