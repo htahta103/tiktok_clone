@@ -3,6 +3,7 @@ import 'package:tiktok_clone/common/utils/utils.dart';
 import 'package:tiktok_clone/common/values/assets.gen.dart';
 import 'package:tiktok_clone/common_widget/values/values.dart';
 import 'package:tiktok_clone/presentations/modules/feed_screen/feed_item_ui_model.dart';
+import 'package:tiktok_clone/presentations/modules/feed_screen/module/comment_section_widget/comments_section_widget.dart';
 import 'package:tiktok_clone/presentations/modules/feed_screen/module/video_scroll_view_widget/content_info.dart';
 
 import '../../../../../common_widget/buttons/like_button/like_button.dart';
@@ -60,17 +61,15 @@ class _VideoContentWidgetState extends State<VideoContentWidget> {
         LikeButton(
           onTap: (isLiked) async {
             await showModalBottomSheet(
+              isScrollControlled: true,
               context: context,
               builder: (context) {
-                return Container(
-                  constraints: BoxConstraints(maxHeight: 800.h),
-                  color: Colors.red,
-                );
+                return const CommentsSection();
               },
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.transparent,
             );
             return false;
           },

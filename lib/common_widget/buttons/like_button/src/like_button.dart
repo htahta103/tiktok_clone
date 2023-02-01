@@ -41,6 +41,7 @@ class LikeButton extends StatefulWidget {
     this.iconColorLiked,
     this.countColor,
     this.setLikeStream,
+    this.haveBubble,
   })  : bubblesSize = bubblesSize ?? size * 2.0,
         circleSize = circleSize ?? size * 0.8,
         super(key: key);
@@ -53,6 +54,7 @@ class LikeButton extends StatefulWidget {
 
   /// total size of bubbles
   final double bubblesSize;
+  final bool? haveBubble;
 
   /// colors of bubbles
   final BubblesColor bubblesColor;
@@ -230,32 +232,38 @@ class LikeButtonState extends State<LikeButton> with TickerProviderStateMixin {
           return Stack(
             clipBehavior: Clip.none,
             children: <Widget>[
-              Positioned(
-                top: (widget.size - widget.bubblesSize) / 2.0,
-                left: (widget.size - widget.bubblesSize) / 2.0,
-                child: CustomPaint(
-                  size: Size(widget.bubblesSize, widget.bubblesSize),
-                  painter: BubblesPainter(
-                    currentProgress: _bubblesAnimation.value,
-                    color1: widget.bubblesColor.dotPrimaryColor,
-                    color2: widget.bubblesColor.dotSecondaryColor,
-                    color3: widget.bubblesColor.dotThirdColorReal,
-                    color4: widget.bubblesColor.dotLastColorReal,
-                  ),
-                ),
-              ),
-              Positioned(
-                top: (widget.size - widget.circleSize) / 2.0,
-                left: (widget.size - widget.circleSize) / 2.0,
-                child: CustomPaint(
-                  size: Size(widget.circleSize, widget.circleSize),
-                  painter: CirclePainter(
-                    innerCircleRadiusProgress: _innerCircleAnimation.value,
-                    outerCircleRadiusProgress: _outerCircleAnimation.value,
-                    circleColor: widget.circleColor,
-                  ),
-                ),
-              ),
+              widget.haveBubble ?? true
+                  ? Positioned(
+                      top: (widget.size - widget.bubblesSize) / 2.0,
+                      left: (widget.size - widget.bubblesSize) / 2.0,
+                      child: CustomPaint(
+                        size: Size(widget.bubblesSize, widget.bubblesSize),
+                        painter: BubblesPainter(
+                          currentProgress: _bubblesAnimation.value,
+                          color1: widget.bubblesColor.dotPrimaryColor,
+                          color2: widget.bubblesColor.dotSecondaryColor,
+                          color3: widget.bubblesColor.dotThirdColorReal,
+                          color4: widget.bubblesColor.dotLastColorReal,
+                        ),
+                      ),
+                    )
+                  : const SizedBox(),
+              widget.haveBubble ?? true
+                  ? Positioned(
+                      top: (widget.size - widget.circleSize) / 2.0,
+                      left: (widget.size - widget.circleSize) / 2.0,
+                      child: CustomPaint(
+                        size: Size(widget.circleSize, widget.circleSize),
+                        painter: CirclePainter(
+                          innerCircleRadiusProgress:
+                              _innerCircleAnimation.value,
+                          outerCircleRadiusProgress:
+                              _outerCircleAnimation.value,
+                          circleColor: widget.circleColor,
+                        ),
+                      ),
+                    )
+                  : const SizedBox(),
               Container(
                 width: widget.size,
                 height: widget.size,

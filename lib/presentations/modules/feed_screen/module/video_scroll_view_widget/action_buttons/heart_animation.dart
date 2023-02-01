@@ -86,6 +86,8 @@ class _HeartAnimationState extends State<HeartAnimation>
   }
 
   Future doAnimation() async {
+    controller.stop();
+    controller.reset();
     await controller.forward();
     controller.reset();
   }

@@ -70,15 +70,15 @@ class _ContentInfoState extends State<ContentInfo> {
               Container(
                 decoration: BoxDecoration(gradient: AppColors.contentGradient),
                 padding: EdgeInsets.fromLTRB(15.w, 15.h, 75.w, 20.h),
-                child: Row(
+                child: Wrap(
                   children: [
-                    Expanded(
-                      child: RichText(
-                        maxLines: isShowMore ? 6 : 1,
-                        overflow: TextOverflow.ellipsis,
-                        text: TextSpan(
-                          children: textSpans,
-                        ),
+                    RichText(
+                      maxLines: isShowMore ? 6 : 1,
+                      overflow: TextOverflow.ellipsis,
+                      text: TextSpan(
+                        children: [
+                          ...textSpans,
+                        ],
                       ),
                     ),
                     uiModel.isOverflow

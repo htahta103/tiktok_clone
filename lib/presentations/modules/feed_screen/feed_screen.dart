@@ -46,6 +46,7 @@ class _FeedScreenState extends State<FeedScreen> {
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width.floor();
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       //OnSwipe
       body: PageView.builder(
           controller: swipeController,

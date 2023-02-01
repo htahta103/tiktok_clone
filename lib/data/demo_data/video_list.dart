@@ -10,7 +10,7 @@ var demo_data = {
       "user_pic":
           "https://firebasestorage.googleapis.com/v0/b/tiktok-clone-ef77d.appspot.com/o/rose.jpeg?alt=media&token=dd31d4cf-9d62-42da-9da6-eb9de3baaed2",
       "video_title":
-          "Video 1 zxcxc #abvc #cxcx asadssad a asda sd asdas vxc v xcvxc vx cvxc vxcv xcvxcv xc vxcv xc v"
+          "Video 1 zxcxc #abvc #cxcx asadssad a asda sd asdas vxc v xcvxc vx cvxc vxcv xcvxcv xc vxcv xc v asdaisdlaksdlaksjdlaksjd alskdj aslkdjalskdjalskj laksj dlaksjd"
     },
     {
       "comments": "21",

@@ -2,6 +2,7 @@ part of commonWidget;
 
 class CircleContainer extends StatelessWidget {
   final Color? bgColor;
+  final Color? borderColor;
   final EdgeInsets? margin;
   final EdgeInsets? padding;
   final Widget child;
@@ -16,7 +17,8 @@ class CircleContainer extends StatelessWidget {
       this.padding,
       this.haveBorder,
       this.gradient,
-      this.size});
+      this.size,
+      this.borderColor});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class CircleContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(45),
         gradient: gradient,
         border: haveBorder ?? true
-            ? Border.all(color: AppColors.white, width: 2.w)
+            ? Border.all(color: borderColor ?? AppColors.white, width: 2.w)
             : null,
         boxShadow: const [
           // BoxShadow(
@@ -47,6 +49,7 @@ class CircleContainer extends StatelessWidget {
 
 class CircleAnimatedContainer extends StatelessWidget {
   final Color? bgColor;
+  final Color? borderColor;
   final EdgeInsets? margin;
   final EdgeInsets? padding;
   final Widget child;
@@ -64,6 +67,7 @@ class CircleAnimatedContainer extends StatelessWidget {
     this.gradient,
     this.size,
     required this.controller,
+    this.borderColor,
   });
 
   @override
@@ -80,6 +84,7 @@ class CircleAnimatedContainer extends StatelessWidget {
         haveBorder: haveBorder,
         gradient: gradient,
         size: size,
+        borderColor: borderColor,
         child: child,
       ),
     );

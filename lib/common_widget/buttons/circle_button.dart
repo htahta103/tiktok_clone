@@ -5,14 +5,20 @@ class MCircleButton extends StatefulWidget {
   final Widget? child;
   final double? size;
   final Color? bgColor;
+  final Color? borderColor;
   final VoidCallback? addFriendColors;
+  final bool haveAddFriendButton;
+  final EdgeInsets? margin;
   const MCircleButton(
       {Key? key,
       this.child,
       this.onPressed,
       this.size,
       this.bgColor,
-      this.addFriendColors})
+      this.addFriendColors,
+      this.haveAddFriendButton = true,
+      this.margin,
+      this.borderColor})
       : super(key: key);
 
   @override
@@ -31,7 +37,10 @@ class _MCardState extends State<MCircleButton>
     return Stack(
       children: [
         CircleContainer(
-          margin: EdgeInsets.symmetric(vertical: 7.5.h, horizontal: 5.w),
+          margin: widget.margin ??
+              EdgeInsets.symmetric(vertical: 7.5.h, horizontal: 5.w),
+          bgColor: widget.bgColor,
+          borderColor: widget.borderColor,
           child: InkWell(
             onTap: widget.onPressed,
             child: Stack(
@@ -45,23 +54,25 @@ class _MCardState extends State<MCircleButton>
             ),
           ),
         ),
-        Positioned(
-          bottom: 0,
-          left: 0,
-          right: 0,
-          child: Center(
-            child: CircleContainer(
-              haveBorder: false,
-              padding: EdgeInsets.all(1.h),
-              bgColor: AppColors.red,
-              child: Icon(
-                Icons.add,
-                color: AppColors.white,
-                size: 15.h,
-              ),
-            ),
-          ),
-        )
+        widget.haveAddFriendButton
+            ? Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Center(
+                  child: CircleContainer(
+                    haveBorder: false,
+                    padding: EdgeInsets.all(1.h),
+                    bgColor: AppColors.red,
+                    child: Icon(
+                      Icons.add,
+                      color: AppColors.white,
+                      size: 15.h,
+                    ),
+                  ),
+                ),
+              )
+            : const SizedBox.shrink()
       ],
     );
   }

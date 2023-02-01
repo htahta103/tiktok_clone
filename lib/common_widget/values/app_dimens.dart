@@ -2,6 +2,8 @@ part of 'values.dart';
 
 class AppDimens {
   AppDimens._();
+  //Text
+  static const double titleSize = 13;
 
   //Button
 

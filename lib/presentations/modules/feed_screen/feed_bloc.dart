@@ -40,7 +40,7 @@ class FeedBloc extends BaseBloc {
             data: video,
             content: StringUtil.splitStringWithHashtag(video.video_title),
             isOverflow: StringUtil.hasTextOverflow(
-                video.video_title, const TextStyle(),
+                '${video.video_title}        ', const TextStyle(),
                 maxWidth: 500.w, maxLines: 1)));
       }
       _videoListCtrl.sink.add(res);

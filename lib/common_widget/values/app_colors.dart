@@ -7,6 +7,7 @@ class AppColors {
   static const Color white = Colors.white;
   static const Color white60 = Colors.white60;
   static const Color white30 = Colors.white30;
+  static const Color black38 = Colors.black38;
   static const Color transparent = Colors.transparent;
   static Color shimmerBase = Colors.grey.shade50;
   static Color shimmerHighLighted = Colors.grey.shade200;
@@ -157,7 +158,7 @@ class AppColors {
   static const Color _cardBGDark = Color(0xFF6E7D91);
   static Color cardBG = _cardBGLight;
 
-  static const Color _hiEmTextLight = Color(0xFF272727);
+  static const Color _hiEmTextLight = Color(0xFF86878B);
   static const Color _hiEmTextDark = Color(0xFFFBFBFB);
   static Color hiEmText = _hiEmTextLight;
 
@@ -168,7 +169,7 @@ class AppColors {
   static final LinearGradient cdGradient = LinearGradient(
       begin: Alignment.topRight,
       end: Alignment.bottomLeft,
-      stops: [
+      stops: const [
         0.1257,
         0.3838,
         0.6278,
