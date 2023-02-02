@@ -54,7 +54,7 @@ class _ContentInfoState extends State<ContentInfo> {
           return Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
                 padding: EdgeInsets.fromLTRB(15.w, 15.h, 75.w, 0.h),

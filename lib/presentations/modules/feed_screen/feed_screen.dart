@@ -22,19 +22,18 @@ class _FeedScreenState extends State<FeedScreen> {
   late FeedBloc _bloc;
   late PageController swipeController;
   bool pageIsScrolling = false;
-
   @override
   void initState() {
     super.initState();
     _bloc = Provider.of<FeedBloc>(context, listen: false);
     swipeController = PageController(initialPage: 0, viewportFraction: 1);
-
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      swipeController.position.addListener(() {
+      swipeController.addListener(() {
+        print(swipeController.position.pixels);
         if (swipeController.position.pixels == 0) {
           _bloc.setStop(true);
         } else {
-          //bnaws stop
+          // print("//bnaws stop");
           _bloc.setStop(false);
         }
       });
@@ -43,8 +42,19 @@ class _FeedScreenState extends State<FeedScreen> {
   }
 
   @override
+  void didUpdateWidget(covariant FeedScreen oldWidget) {
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void dispose() {
+    swipeController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.of(context).size.width.floor();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       //OnSwipe

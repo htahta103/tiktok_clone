@@ -104,10 +104,12 @@ class _HeartAnimationState extends State<HeartAnimation>
             opacity: opacityOut,
             child: FadeTransition(
               opacity: opacityIn,
-              child: Icon(
-                Icons.favorite_rounded,
-                size: 100,
-                color: AppColors.red70,
+              child: IgnorePointer(
+                child: Icon(
+                  Icons.favorite_rounded,
+                  size: 100,
+                  color: AppColors.red70,
+                ),
               ),
             ),
           ),

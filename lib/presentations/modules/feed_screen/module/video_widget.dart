@@ -156,6 +156,9 @@ class _VideoWidgetState extends State<VideoWidget>
                   onTap: () async {
                     await widget.feedItem.controller.onTapVideo();
                   },
+                  onDoubleTap: () {
+                    doubleTapToLike();
+                  },
                   child: Center(
                     child: Icon(
                       Icons.play_arrow_rounded,
