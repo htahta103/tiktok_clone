@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:tiktok_clone/common/utils/utils.dart';
 import 'package:tiktok_clone/common_widget/log/log_util.dart';
 import 'package:tiktok_clone/di/di.dart';
+import 'package:tiktok_clone/main_utils/deep_link_setup.dart';
 
 import 'main_utils/build_config.dart';
 import 'main_utils/env_setup.dart';
@@ -42,6 +43,7 @@ class BaseApp {
         height: MediaQueryData.fromWindow(window).size.height,
         textScaleFactor: MediaQueryData.fromWindow(window).textScaleFactor,
       ));
+      await DeepLinkSetup.initUniLink();
     } catch (e) {
       Log.error('main.dart', e);
     }
