@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import '../common_widget/values/values.dart';
+import '../firebase_options.dart';
 import 'build_config.dart';
 
 abstract class Env {
@@ -13,6 +15,7 @@ abstract class Env {
   void _init() {
     runZonedGuarded(() async {
       WidgetsFlutterBinding.ensureInitialized();
+      Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
       await BuildConfig.init(flavor: getEnv());
       // HttpOverrides.global = MyHttpOverrides();
       await onInjection();

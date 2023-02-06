@@ -41,6 +41,11 @@ dependencies:
   #UI
   flutter_persistent_keyboard_height: ^1.0.5
   keyboard_attachable: ^2.1.0
+
+  #Firebase
+  firebase_core: ^2.4.1
+  firebase_dynamic_links: ^5.0.11
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -51,7 +56,7 @@ dev_dependencies:
   flutter_lints: ^2.0.1
   retrofit_generator: ^4.2.0
   json_serializable:
-
+  rename:
   #Deeplink
   uni_links: ^0.5.1
 

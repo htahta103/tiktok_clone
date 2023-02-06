@@ -11,6 +11,7 @@ import 'package:tiktok_clone/di/di.dart';
 import 'package:tiktok_clone/main_utils/deep_link_setup.dart';
 
 import 'main_utils/build_config.dart';
+import 'main_utils/dynamic_link_setup.dart';
 import 'main_utils/env_setup.dart';
 
 void main() => Main();
@@ -36,7 +37,6 @@ class BaseApp {
     try {
       //TODO inject and prepare data
       await Injection.inject();
-
       ScreenUtil.init(MediaQueryAppModel(
         devicePixelRatio: MediaQueryData.fromWindow(window).devicePixelRatio,
         width: MediaQueryData.fromWindow(window).size.width,
@@ -44,6 +44,7 @@ class BaseApp {
         textScaleFactor: MediaQueryData.fromWindow(window).textScaleFactor,
       ));
       await DeepLinkSetup.initUniLink();
+      DynamicLinkSetup.initDynamicLinks();
     } catch (e) {
       Log.error('main.dart', e);
     }
