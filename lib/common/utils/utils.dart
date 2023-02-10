@@ -1,5 +1,6 @@
 library utils;
 
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:tiktok_clone/common/utils/utils_detail/string_utils.dart';
 import 'package:video_player/video_player.dart';
