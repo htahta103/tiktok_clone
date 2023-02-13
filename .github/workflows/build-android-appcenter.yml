@@ -1,8 +1,5 @@
 name: deploy-android-appcenter
-on:
-  push:
-    branches:
-      - 'master'
+on: [push]
 jobs:
   build:
     runs-on: macos-latest
