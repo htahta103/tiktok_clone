@@ -1,0 +1,9 @@
+source "https://rubygems.org"
+
+gem "fastlane"
+plugins_path = File.join(File.dirname(__FILE__), 'fastlane', 'Pluginfile')
+eval_gemfile(plugins_path) if File.exist?(plugins_path)
+
+#ios 
+#plugins_path_ios = File.join(File.dirname(__FILE__), 'platforms', 'ios', 'fastlane', 'Pluginfile')
+#eval_gemfile(plugins_path_ios) if File.exist?(plugins_path_ios)

@@ -1,0 +1,73 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  lane :beta do
+    gradle(task: "clean assembleRelease")
+    crashlytics
+  
+    # sh "your_script.sh"
+    # You can also use other beta testing services here
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    gradle(task: "clean assembleRelease")
+    upload_to_play_store
+  end
+
+  desc "Build debug and test APK for screenshots"
+  lane :build_and_screengrab do
+    build_android_app(
+      task: 'assemble',
+      build_type: 'Release',
+    )
+#     build_android_app(
+#       task: 'assemble',
+#       build_type: 'AndroidTest'
+#     )
+    screengrab()
+  end
+
+  #https://github.com/microsoft/fastlane-plugin-appcenter
+  desc "Deploy to app center"
+  lane :deploy_appcenter do 
+    gradle(task: "clean assembleRelease") # important
+    # build_android_app(
+    #   task: 'assemble',
+    #   build_type: 'Release',
+    # )
+    appcenter_upload(
+      api_token: "53540ce96a4fad0d4511636629a99d76e557ec4f",
+      owner_name: "htahta103-gmail.com",
+      owner_type: "user", # Default is user - set to organization for appcenter organizations
+      app_name: "tiktok_clone_android",
+      file: "../build/app/outputs/flutter-apk/app-release.apk",
+      notify_testers: true, # Set to false if you don't want to notify testers of your new release (default: `false`),
+      # destinations: "public",
+      release_notes: ""
+    ) 
+  end
+end
+
+
