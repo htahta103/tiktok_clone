@@ -9,10 +9,19 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: "3.3.10"
       - name: build release
         run: ./gradlew assembleRelease
+      - name: Pub Get Packages
+        run: flutter pub get
+      - name: Build apk release
+        run: flutter build apk --release
       - name: upload apk to App Center
         uses: wzieba/AppCenter-Github-Action@v1
+      
         with:
           appName: tiktok_clone_android
           token: 53540ce96a4fad0d4511636629a99d76e557ec4f
