@@ -64,7 +64,7 @@ platform :android do
       app_name: "tiktok_clone_android",
       file: "../build/app/outputs/flutter-apk/app-release.apk",
       notify_testers: true, # Set to false if you don't want to notify testers of your new release (default: `false`),
-      # destinations: "public",
+      destinations: "public",
       release_notes: ""
     ) 
   end
