@@ -12,7 +12,10 @@ jobs:
       RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
     steps:
       - uses: actions/checkout@v2
-      
+
+      - name: Move to Android Folder
+        id: build
+        run: cd android
       - name: Build APK
         id: build
         run: bash ./gradlew assembleRelease
