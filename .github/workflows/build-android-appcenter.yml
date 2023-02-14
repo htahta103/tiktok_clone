@@ -38,7 +38,7 @@ jobs:
         uses: wzieba/AppCenter-Github-Action@v1
       
         with:
-          appName: tiktok_clone_android
+          appName: htahta103-gmail.com/tiktok_clone_android
           token: 53540ce96a4fad0d4511636629a99d76e557ec4f
           group: public
           file: build/app/outputs/flutter-apk/app-release.apk
