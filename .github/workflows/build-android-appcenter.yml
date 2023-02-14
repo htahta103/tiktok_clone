@@ -15,12 +15,15 @@ jobs:
 
       - name: Move to Android Folder
         run: cd android
+      
+      - name: gradlew wrapper
+        run: gradle wrapper
 
       - name: Make gradlew executable
-        run: chmod +x gradlew  
-
+        run: chmod +x ./gradlew  
+        
       - name: Build APK
-        run: bash gradlew assembleRelease
+        run: bash ./gradlew assembleRelease
 
       - name: Sign APK
         id: sign_apk
