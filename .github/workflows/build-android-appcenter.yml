@@ -1,6 +1,6 @@
-name: deploy-android-appcenter
-on: [push]
-jobs:
+# name: deploy-android-appcenter
+# on: [push]
+# jobs:
   build:
     name: Create Android Build
     # 1
