@@ -15,6 +15,9 @@ jobs:
 
       - name: Move to Android Folder
         run: cd android
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew  
         
       - name: Build APK
         run: bash ./gradlew assembleRelease
