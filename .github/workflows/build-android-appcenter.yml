@@ -83,6 +83,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - name: Move to android
+        run: cd android
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: build prod
@@ -91,6 +93,8 @@ jobs:
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+      - name: Move to project directory
+        run: cd ..
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
